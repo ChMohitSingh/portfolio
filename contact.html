@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Singh .Web developer,Programmer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+    <!-- <div class="sidebar"> -->
+      <div class="sidebar sidebarGo">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/intro.html">My Intro</a></li> 
+                <li><a href="/Certificate.html">Certificates</a></li>
+                <li><a href="/Blog.html">Blog</a></li>
+                <li><a href="/contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main">
+      <div class="hamburger">
+        <img class="ham" src="ham.png" alt="" width="23">
+        <img class="cross" src="cross.png"alt="" width="23">
+    </div>
+        <div class="contactform">
+            <h1>Contact Me For Work & General Enquiries</h1>
+            <form>
+              <div class="call">You Can Mention Your Problem In The Given Form:-</div>
+              <div class="mb-3">
+                <label for="clientEmail1" class="form-label">Name</label>
+                <input type="name" class="form-control" id="clientname" aria-describedby="emailHelp" required>
+              </div>
+                <div class="mb-3">
+                  <label for="clientEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="clientEmail1" aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">We'll never share your email & phone with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="clientphone" class="form-label">Phone</label>
+                  <input type="phone" class="form-control" id="clientphone" required>
+                </div>
+                <div class="mb-3">
+                  <label for="clientEmail1" class="form-label">Problem</label>
+                  <input type="name" class="form-control" id="clientEmail2" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3" id ="form-check">
+                  <input type="checkbox" class="form-check-input" id="isclient" required>
+                  <label class="form-check-label" for="isclient"> I want you to work on a project with me</label>
+                </div>
+                &nbsp;&nbsp;
+                <button type="submit" class="btn btn-sm" id="btn1">Submit</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-sm" id="btn2">Delete Data</button><br><br>
+                <!-- <a href="./StorageData.html"><button class="btn btn-sm"> See Details</button></a> -->
+                &nbsp;
+                <a href="./StorageData.html">See Details</a><br>
+                <div class="call">You Can Call Us On:-<br><br>&nbsp;&nbsp;7505391139&nbsp;&nbsp; <------&nbsp;Whatsapp No<br><br>&nbsp;&nbsp;9012997861</div>
+                <div class="call">You Can Also mail Us On:-<br><br>&nbsp;&nbsp;mohit.singh_cs20@gla.ac.in<br><br>&nbsp;&nbsp;7505391139m@gmail.com</div>
+              </form>
+        </div>
+    </div>
+</div><script>
+  // Reference
+  input1 = document.getElementById("clientname");
+  input2 = document.getElementById("clientEmail1");
+  input3 = document.getElementById("clientphone");
+  input4 = document.getElementById("clientEmail2");
+  btn = document.getElementById("btn1");
+  delbtn = document.getElementById("btn2");
+
+  //   console.log(input);
+  //   console.log(btn);
+  var data = {
+    name: "",
+    email: "",
+    phone: "",
+    problem: "",
+  };
+  // function to store Data in LocalStorage
+  btn.onclick = function () {
+    data.name = input1.value;
+    data.email = input2.value;
+    data.phone = input3.value;
+    data.problem= input4.value
+
+    console.log(data);
+    localStorage.setItem("info", JSON.stringify(data));
+    input1.value = "";
+    input2.value = "";
+    input3.value = "";
+    input4.value = "";
+  };
+  delbtn.onclick = function () {
+    localStorage.removeItem("info");
+  };
+</script>
+<script src="script.js"></script>
+</body>
+</html>
